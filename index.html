@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>candy</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <style>
+        h1{
+            font-family:truculenta;
+            padding:95px;
+            text-align:center;
+            background: #FDFD98;
+        }
+        p{
+            font-size:22px;
+            padding:26px;
+        }
+        body {margin:0;}
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #FFC8DD;
+        }
+
+        li {
+            font-family:truculenta;
+            float: left;
+            font-size:26px;
+            background-color: #FFC8DD;
+            cursor:pointer;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+        background-color: #FFAFCC;
+        }
+
+        .active {
+          background-color: #A2D2FF;
+        }
+        
+        .inactive{
+            background-color: #FFC8DD;
+        }
+        div { 
+            animation: fadeIn 3s; 
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="PAGE">
+            <h1>candy's website</h1>
+            <p>Hi there! :D My name is Candy. Welcome to my website!<br>I love coding and so I coded this website :)<br><br>I'm from Kuantan, Pahang but I live at Seremban now.<br>(I guess)<br><br>Pls come & play with me, I would be very happy!!</p>
+        </div>
+        
+        <div class="PAGE" style="display:none;">
+            <h1>my projects</h1>
+            <p style="text-align:center;">No projects yet.</p>
+        </div>
+        
+        <div class="PAGE" style="display:none;">
+            <h1>my journal</h1>
+            <p>23.3.24, <span> im happy</span><br><br>To be continued...</p>
+        </div>
+        
+        <ul id="nav">
+            <li><a onClick="changePage(1);" class="btn active">about</a></li>
+            <li><a onClick="changePage(2);" class="btn">projects</a></li>
+            <li><a onClick="changePage(3);" class="btn">journal</a></li>
+        </ul>
+        
+        <script>
+            var getPages = document.getElementsByClassName("PAGE");
+            
+            function changePage(index) {
+                for(var i = 0; i < getPages.length; i++){
+                    getPages[i].style.display = "none";
+                }
+            
+                getPages[index - 1].style.display = "block";
+                
+                window.scroll(0, 0);
+            }
+            
+            changePage(1);
+        </script>
+        <script>
+            var header = document.getElementById("nav");
+            var btns = header.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                
+                this.className += " active";
+                });
+            }
+        </script>
+    </body>
+</html>
