@@ -17,6 +17,7 @@
         p{
             font-size:32px;
             padding:42px;
+            float:left;
         }
         body {margin:0;}
 
@@ -65,12 +66,23 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+        #about{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            float:left;
+            max-width: 35%;
+            max-height:25%;
+        }
     </style>
     </head>
     <body>
-        <div class="PAGE">
+        <div class="PAGE" id="about">
             <h1>candy's website</h1>
             <p>Hi there! :D My name is Candy. Welcome to my website!<br>I love coding and so I coded this website :)<br><br>I'm from Kuantan, Pahang but I live at Seremban now.<br>(I guess)<br><br>Pls come & play with me, I would be very happy!!</p>
+            <img src="https://img.freepik.com/premium-photo/white-cat-with-blue-eyes-sitting-tree-generative-ai_733139-5721.jpg">
         </div>
         
         <div class="PAGE" style="display:none;">
